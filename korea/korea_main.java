@@ -1,5 +1,7 @@
 package korea;
 import java.util.Scanner;
+import java.io.FileReader;
+import java.io.BufferedReader;
 import java.util.*;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -262,6 +264,11 @@ public class korea_main {
 				String exit = scanner.next();
 				if (exit.equals("Yes")){
 					System.out.println("프로그램을 종료합니다.");
+					BufferedReader reader = new BufferedReader(new FileReader("c:/korea.txt"));
+					String ch;
+					while((ch = reader.readLine())!= null) {
+						System.out.print(ch);
+					}
 					System.out.println("지금까지 봤던 글들은 모두 로컬 디스크 안에 텍스트파일로 기록하였습니다.");
 					a = false;
 				}
